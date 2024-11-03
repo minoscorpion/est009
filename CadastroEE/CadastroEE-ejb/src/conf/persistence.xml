@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="3.0" 
+             xmlns="https://jakarta.ee/xml/ns/persistence" 
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd">
+  <persistence-unit name="CadastroEE-ejbPU" transaction-type="JTA">
+    <jta-data-source>jdbc/loja</jta-data-source> <!-- Nome do recurso JNDI configurado no GlassFish -->
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="jakarta.persistence.schema-generation.database.action" value="create"/> <!-- ou "update", conforme sua necessidade -->
+      <property name="jakarta.persistence.jdbc.url" value="jdbc:sqlserver://localhost:1433;databaseName=loja;trustServerCertificate=true"/> <!-- Apenas para referência -->
+      <property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/> <!-- Driver JDBC -->
+    </properties>
+  </persistence-unit>
+</persistence>
